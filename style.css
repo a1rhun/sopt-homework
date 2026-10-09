@@ -1,0 +1,107 @@
+/* 메인 페이지(주차 선택) 스타일: week1과 같은 민트 계열 */
+:root {
+  --color-text: #1f2937;
+  --color-bg: #eaf8f6;
+  --gradient-main: linear-gradient(
+    160deg,
+    #a8f0d8 0%,
+    #a5dff0 50%,
+    #c9c4f5 100%
+  );
+  --color-card-bg: rgba(255, 255, 255, 0.7);
+  --color-card-bg-hover: rgba(255, 255, 255, 0.95);
+  --color-card-shadow: rgba(0, 0, 0, 0.15);
+  --font-base:
+    -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo",
+    sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  background-image: var(--gradient-main);
+  background-attachment: fixed;
+}
+
+.home {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.home__title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.home__desc {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.home__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.week-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px 16px;
+  border-radius: 16px;
+  background: var(--color-card-bg);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+a.week-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px var(--color-card-shadow);
+  background: var(--color-card-bg-hover);
+}
+
+.week-card__label {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.week-card__desc {
+  font-size: 13px;
+}
+
+/* 아직 없는 주차 */
+.week-card--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .home__list {
+    grid-template-columns: 1fr;
+  }
+}

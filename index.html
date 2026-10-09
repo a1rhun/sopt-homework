@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOPT 과제 모음</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="home">
+      <h1 class="home__title">Air로그 · SOPT 과제</h1>
+      <p class="home__desc">주차를 선택해서 이동하세요.</p>
+
+      <ul class="home__list">
+        <li class="home__item">
+          <a class="week-card" href="week1/">
+            <span class="week-card__label">Week 1</span>
+            <span class="week-card__desc">HTML / CSS 블로그 페이지</span>
+          </a>
+        </li>
+        <li class="home__item">
+          <!-- 아직 없는 주차: 링크 대신 비활성 카드. 과제를 올리면 <a href="week2/">로 교체 -->
+          <div class="week-card week-card--disabled" aria-disabled="true">
+            <span class="week-card__label">Week 2</span>
+            <span class="week-card__desc">준비 중</span>
+          </div>
+        </li>
+        <li class="home__item">
+          <div class="week-card week-card--disabled" aria-disabled="true">
+            <span class="week-card__label">Week 3</span>
+            <span class="week-card__desc">준비 중</span>
+          </div>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
