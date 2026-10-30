@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SOPT 과제 모음</title>
+    <script>
+      // SPA(week3) 새로고침 대응: 하위 경로를 쿼리로 넘겨 index.html에서 복원
+      (function (l) {
+        var base = "/sopt-homework/week3";
+        if (l.pathname.indexOf(base + "/") === 0) {
+          var rest = l.pathname.slice(base.length) + l.search;
+          l.replace(base + "/?p=" + encodeURIComponent(rest).replace(/%2F/g, "/") + l.hash);
+        } else {
+          l.replace("/sopt-homework/");
+        }
+      })(window.location);
+    </script>
+  </head>
+  <body></body>
+</html>
